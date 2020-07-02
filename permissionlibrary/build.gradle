@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 29
@@ -36,11 +35,24 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
+//以下配置是将该模块发布到jCenter库
+// must be applied after your artifact generating plugin (eg. java / com.android.library)
+apply plugin: 'com.novoda.bintray-release'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.2'
+    }
+}
+
 publish {
-    userOrg = 'permission' //bintray账户下某个组织id
-    groupId = 'com.android.permissionm' //maven仓库下库的包名，一般为模块包名
+    userOrg = 'mengbm' //bintray账户下某个组织id
+    groupId = 'com.permissionm.mk' //maven仓库下库的包名，一般为模块包名
     artifactId = 'permissionm' //项目名称
     publishVersion = '1.0.0' //版本号
-    desc = '' //项目介绍，可以不写
-    website = '' //项目主页，可以不写
+    desc = 'Make Android runtime permission request easy' //项目介绍，可以不写
+    website = 'https://github.com/QMingM/PermissionM.git' //项目主页，可以不写
 }
