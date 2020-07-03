@@ -12,8 +12,8 @@ dependencies {
 
 然后就可以使用如下语法结构来申请运行时权限了
 
-需要现在配置文件申请需要的权限
-...
+需要先在配置文件申请需要的权限
+```groovy
  PermissionM.request(
                 this,
                 Manifest.permission.CALL_PHONE,
@@ -25,4 +25,4 @@ dependencies {
                     Toast.makeText(this, "you denied $deniedList", Toast.LENGTH_LONG).show()
                 }
               }
-...
+```
