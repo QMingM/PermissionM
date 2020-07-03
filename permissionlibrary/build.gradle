@@ -49,9 +49,9 @@ buildscript {
 }
 
 publish {
-    userOrg = 'mengbm' //bintray账户下某个组织id
-    groupId = 'com.permissionm.mk' //maven仓库下库的包名，一般为模块包名
-    artifactId = 'permissionm' //项目名称
+    userOrg = 'mengbming' //bintray账户下某个组织id
+    groupId = 'com.android.permission' //maven仓库下库的包名，一般为模块包名
+    artifactId = 'permission-m' //项目名称
     publishVersion = '1.0.0' //版本号
     desc = 'Make Android runtime permission request easy' //项目介绍，可以不写
     website = 'https://github.com/QMingM/PermissionM.git' //项目主页，可以不写
